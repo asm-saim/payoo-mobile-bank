@@ -32,3 +32,20 @@ document.getElementById('add-money-btn').addEventListener('click',
 
     }
 )
+
+// Toggling Feature:
+
+//add-money-part
+document.getElementById('add-money-cart').addEventListener('click',
+    function () {
+        document.getElementById('cash-out-part').style.display = 'none';
+        document.getElementById('add-money-part').style.display = 'block';
+    }
+)
+//cash-out-part
+document.getElementById('cash-out-cart').addEventListener('click',
+    function () {
+        document.getElementById('add-money-part').style.display = 'none';
+        document.getElementById('cash-out-part').style.display = 'block';
+    }
+)

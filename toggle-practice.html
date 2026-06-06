@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggling</title>
+</head>
+
+<body>
+    <button id="btn-1">Button1</button>
+    <button id="btn-2">Button2</button>
+
+    <h1 id="h-1">This is heading 1 </h1>
+    <h1 id="h-2">This is heading 2 </h1>
+    <script>
+        document.getElementById('btn-1').addEventListener('click',
+            function () {
+                document.getElementById('h-2').style.display = 'none';
+                document.getElementById('h-1').style.display = 'block';
+            }
+        )
+        // 
+        document.getElementById('btn-2').addEventListener('click',
+            function () {
+                document.getElementById('h-1').style.display = 'none';
+                document.getElementById('h-2').style.display = 'block';
+            }
+        )
+    </script>
+</body>
+
+</html>
