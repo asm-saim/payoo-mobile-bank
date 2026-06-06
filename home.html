@@ -25,7 +25,7 @@
                 <img src="./assets/Group.png" class="w-[50px]" alt="">
 
                 <div>
-                    <h2 class="font-bold text-xl">$<span>45000</span></h2>
+                    <h2 class="font-bold text-xl">$<span id="existing-amount">45000</span></h2>
                     <p class="text-[#08080880]">Available balance</p>
                 </div>
             </div>
@@ -78,35 +78,38 @@
             <div>
                 <label for="" class="font-medium text-gray-600">Select a Bank</label>
                 <br>
-                <select class="select w-full bg-[#F4F5F7] mt-2 rounded-full border-none">
+                <select id="bank-name" class="select w-full bg-[#F4F5F7] mt-2 rounded-full border-none">
                     <option disabled selected>Select Bank</option>
                     <option>Brac Bank</option>
                     <option>Standard Chartered Bank</option>
                     <option>City Bank</option>
+                    <option>HSBC</option>
                 </select>
             </div>
             <div class="mt-3">
                 <label for="" class="font-medium text-gray-600">Bank Account Number</label>
                 <br>
-                <input type="text" placeholder="Enter 11 digit account number"
+                <input id="bank-account-number" type="text" placeholder="Enter 11 digit account number"
                     class="input w-full bg-[#F4F5F7] mt-2 rounded-full border-none" />
             </div>
             <div class="mt-3">
                 <label for="" class="font-medium text-gray-600">Amount to Add</label>
                 <br>
-                <input type="text" placeholder="Add amount yo withdraw"
+                <input id="amount" type="text" placeholder="Add amount yo withdraw"
                     class="input w-full bg-[#F4F5F7] mt-2 rounded-full border-none" />
             </div>
             <div class="mt-3">
                 <label for="" class="font-medium text-gray-600">Pin Number</label>
                 <br>
-                <input type="text" placeholder="Enter 4 digit pin number"
+                <input id="pin-number" type="text" placeholder="Enter 4 digit pin number"
                     class="input w-full bg-[#F4F5F7] mt-2 rounded-full border-none" />
             </div>
-            <button class="btn bg-[#0874F2] text-white w-full mt-5 rounded-full">Add Money</button>
+            <button id="add-money-btn" class="btn bg-[#0874F2] text-white w-full mt-5 rounded-full">Add Money</button>
 
         </form>
     </div>
+    <!-- script -->
+    <script src="./home.js"></script>
 </body>
 
 </html>
