@@ -156,17 +156,39 @@ document.getElementById('add-money-cart').addEventListener('click',
         // document.getElementById('cash-out-part').style.display = 'none';
         // document.getElementById('transfer-money-part').style.display = 'none';
         toggleFeature('add-money-part');
+
+        //cart-bg
+        const btnEffect = document.getElementsByClassName('button-effect');
+        for (let effect of btnEffect) {
+            console.log(effect);
+            effect.classList.remove("border-[#0874f2]", "bg-sky-50")
+        }
+        document.getElementById("add-money-cart").classList.add("border-[#0874f2]", "bg-sky-50")
     }
 )
 //cash-out-part
 document.getElementById('cash-out-cart').addEventListener('click',
     function () {
         toggleFeature('cash-out-part');
+        //cart-bg
+        const btnEffect = document.getElementsByClassName('button-effect');
+        for (let effect of btnEffect) {
+            console.log(effect);
+            effect.classList.remove("border-[#0874f2]", "bg-sky-50")
+        }
+        document.getElementById("cash-out-cart").classList.add("border-[#0874f2]", "bg-sky-50")
     }
 )
 //cash-out-part
 document.getElementById('transfer-money-cart').addEventListener('click',
     function () {
         toggleFeature('transfer-money-part');
+        //cart-bg
+        const btnEffect = document.getElementsByClassName('button-effect');
+        for (let effect of btnEffect) {
+            console.log(effect);
+            effect.classList.remove("border-[#0874f2]", "bg-sky-50")
+        }
+        document.getElementById("transfer-money-cart").classList.add("border-[#0874f2]", "bg-sky-50")
     }
 )
