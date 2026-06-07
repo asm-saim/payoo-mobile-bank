@@ -25,6 +25,15 @@ function setInnerText(value) {
     return setInnerTex;
 }
 
+//function for toggling
+function toggleFeature(id) {
+    const forms = document.getElementsByClassName('forms');
+    for (let form of forms) {
+        form.style.display = 'none';
+        document.getElementById(id).style.display = 'block';
+    }
+}
+
 //add-money-feature
 document.getElementById('add-money-btn').addEventListener('click',
     function (e) {
@@ -87,7 +96,8 @@ document.getElementById('withdraw-money-btn').addEventListener('click',
 
         //existingValue
         const existingValue = currentAmount - withdrawAmount;
-        document.getElementById('existing-amount').innerText = existingValue;
+        setInnerText(existingValue); //using function
+
 
         //clear inputs after successful transactions
         document.getElementById('agent-number').value = '';
@@ -97,19 +107,66 @@ document.getElementById('withdraw-money-btn').addEventListener('click',
     }
 )
 
+// Transfer Money feature
+
+document.getElementById('transfer-money-btn').addEventListener('click',
+    function (e) {
+        e.preventDefault();
+        const transferAccNumber = document.getElementById("transfer-account-number").value;
+        const transferAmount = getInputValue('transfer-amount');
+        const transferPinNumber = getInputValue('transfer-pin-number');
+        console.log(transferAccNumber, transferAmount, transferPinNumber);
+
+
+        //find the currentAmount:
+        const currentBalance = getInnerTex('existing-amount');
+        console.log(currentBalance);
+
+        // validation
+        if (transferAccNumber.length !== 11 && transferAccNumber.length !== 13) {
+            alert("Please provide a valid agent number");
+            return;
+        }
+        if (transferPinNumber !== validPin) {
+            alert("Please provide a valid pin number");
+            return;
+        }
+
+        //existingValue
+        const existingBalance = currentBalance - transferAmount;
+        setInnerText(existingBalance); //using function
+
+
+        //clear inputs after successful transactions
+        document.getElementById('transfer-account-number').value = '';
+        document.getElementById('transfer-amount').value = '';
+        document.getElementById('transfer-pin-number').value = '';
+
+
+    }
+)
+
+
 // Toggling Feature:
 
 //add-money-part
 document.getElementById('add-money-cart').addEventListener('click',
     function () {
-        document.getElementById('cash-out-part').style.display = 'none';
-        document.getElementById('add-money-part').style.display = 'block';
+        // document.getElementById('add-money-part').style.display = 'block';
+        // document.getElementById('cash-out-part').style.display = 'none';
+        // document.getElementById('transfer-money-part').style.display = 'none';
+        toggleFeature('add-money-part');
     }
 )
 //cash-out-part
 document.getElementById('cash-out-cart').addEventListener('click',
     function () {
-        document.getElementById('add-money-part').style.display = 'none';
-        document.getElementById('cash-out-part').style.display = 'block';
+        toggleFeature('cash-out-part');
+    }
+)
+//cash-out-part
+document.getElementById('transfer-money-cart').addEventListener('click',
+    function () {
+        toggleFeature('transfer-money-part');
     }
 )

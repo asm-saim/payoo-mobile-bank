@@ -52,7 +52,7 @@
                 <img src="./assets/send1.png" class="mx-auto" alt="">
                 <p class="text-center text-gray-500 font-medium">Cash Out</p>
             </div>
-            <div class="border-1 border-gray-300 rounded-xl px-3 py-6">
+            <div id="transfer-money-cart" class="border-1 border-gray-300 rounded-xl px-3 py-6">
                 <img src="./assets/money1.png" class="mx-auto" alt="">
                 <p class="text-center text-gray-500 font-medium">Transfer Money</p>
             </div>
@@ -75,7 +75,7 @@
 
     <div class="all-money-section max-w-lg mx-auto p-5">
         <!-- add money part -->
-        <div id="add-money-part">
+        <div class="forms" id="add-money-part">
             <h2 class="font-bold text-xl mt-5">Add Money</h2>
             <form class="bg-white my-5 p-7 rounded-2xl">
                 <div>
@@ -114,7 +114,7 @@
         </div>
 
         <!-- Cash out part -->
-        <div id="cash-out-part" style="display: none;">
+        <div class="forms" id="cash-out-part" style="display: none;">
             <h2 class="font-bold text-xl mt-5">Cash Out</h2>
             <form class="bg-white my-5 p-7 rounded-2xl">
                 <div class="mt-3">
@@ -136,6 +136,35 @@
                         class="input w-full bg-[#F4F5F7] mt-2 rounded-full border-none" />
                 </div>
                 <button id="withdraw-money-btn" class="btn bg-[#0874F2] text-white w-full mt-5 rounded-full">Withdraw
+                    Money</button>
+
+            </form>
+
+        </div>
+
+        <!-- Transfer Money part -->
+        <div class="forms" id="transfer-money-part" style="display: none;">
+            <h2 class="font-bold text-xl mt-5">Transfer Money</h2>
+            <form class="bg-white my-5 p-7 rounded-2xl">
+                <div class="mt-3">
+                    <label for="" class="font-medium text-gray-600">User Account Number</label>
+                    <br>
+                    <input id="transfer-account-number" type="text" placeholder="Enter 11 digit account number"
+                        class="input w-full bg-[#F4F5F7] mt-2 rounded-full border-none" />
+                </div>
+                <div class="mt-3">
+                    <label for="" class="font-medium text-gray-600">Amount</label>
+                    <br>
+                    <input id="transfer-amount" type="text" placeholder="Enter amount to transfer"
+                        class="input w-full bg-[#F4F5F7] mt-2 rounded-full border-none" />
+                </div>
+                <div class="mt-3">
+                    <label for="" class="font-medium text-gray-600">Pin Number</label>
+                    <br>
+                    <input id="transfer-pin-number" type="text" placeholder="Enter 4 digit pin number"
+                        class="input w-full bg-[#F4F5F7] mt-2 rounded-full border-none" />
+                </div>
+                <button id="transfer-money-btn" class="btn bg-[#0874F2] text-white w-full mt-5 rounded-full">Send Now
                     Money</button>
 
             </form>
