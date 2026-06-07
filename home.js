@@ -1,3 +1,4 @@
+//add-money-feature
 const validPin = 4321;
 
 document.getElementById('add-money-btn').addEventListener('click',
@@ -29,6 +30,35 @@ document.getElementById('add-money-btn').addEventListener('click',
 
         //update the existing value:
         document.getElementById("existing-amount").innerText = totalAmount;
+
+    }
+)
+
+// Cash Out feature
+document.getElementById('withdraw-money-btn').addEventListener('click',
+    function (e) {
+        e.preventDefault();
+        const agentNumber = document.getElementById('agent-number').value;
+        const withdrawAmount = parseInt(document.getElementById('withdraw-amount').value);
+        const withdrawPinNumber = parseInt(document.getElementById('withdraw-pin-number').value);
+        // console.log(agentNumber, withdrawAmount, withdrawPinNumber);
+
+        //find the currentAmount:
+        const currentAmount = parseInt(document.getElementById('existing-amount').innerText);
+
+        // validation
+        if (agentNumber.length !== 11 && agentNumber.length !== 13) {
+            alert("Please provide a valid agent number");
+            return;
+        }
+        if (withdrawPinNumber !== validPin) {
+            alert("Please provide a valid pin number");
+            return;
+        }
+
+        //existingValue
+        const existingValue = currentAmount - withdrawAmount;
+        document.getElementById('existing-amount').innerText = existingValue;
 
     }
 )
