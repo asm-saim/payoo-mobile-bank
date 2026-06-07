@@ -1,13 +1,23 @@
-//add-money-feature
+
 const validPin = 4321;
 
+//function to get input value:
+function getInputValue(id) {
+    const accessId = document.getElementById('id');
+    const getValue = accessId.value;
+    const convertInt = parseInt(getValue);
+    return convertInt;
+}
+//
+
+//add-money-feature
 document.getElementById('add-money-btn').addEventListener('click',
     function (e) {
         e.preventDefault();
         const bankName = document.getElementById('bank-name').value;
         const bankAccountNumber = document.getElementById('bank-account-number').value;
-        const bankAmount = parseInt(document.getElementById('amount').value);
-        const bankPinNumber = parseInt(document.getElementById('pin-number').value);
+        const bankAmount = getInputValue('amount'); //using function
+        const bankPinNumber = getInputValue('pin-number'); //using function
         // console.log(bankName,bankAccountNumber,bankAmount,bankPinNumber);
 
         //Get the existing amount
@@ -43,8 +53,8 @@ document.getElementById('withdraw-money-btn').addEventListener('click',
     function (e) {
         e.preventDefault();
         const agentNumber = document.getElementById('agent-number').value;
-        const withdrawAmount = parseInt(document.getElementById('withdraw-amount').value);
-        const withdrawPinNumber = parseInt(document.getElementById('withdraw-pin-number').value);
+        const withdrawAmount = getInputValue('withdraw-amount')
+        const withdrawPinNumber = getInputValue('withdraw-pin-number')
         // console.log(agentNumber, withdrawAmount, withdrawPinNumber);
 
         //find the currentAmount:
