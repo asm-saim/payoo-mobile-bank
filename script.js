@@ -13,11 +13,12 @@ document.getElementById('loginButton').addEventListener('click',
         const newPinNumber = parseInt(catchPinNumber);
 
         //condition
-        if(newMobileNumber===mobileNumber && newPinNumber===mobilePin)
-        {
-            window.location.href='./home.html'
+        if (newMobileNumber === mobileNumber && newPinNumber === mobilePin) {
+            window.location.href = './home.html'
         }
-        else{
+        else {
             alert('Invalid Credential')
         }
+
+
     })

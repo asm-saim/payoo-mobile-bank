@@ -26,10 +26,14 @@ document.getElementById('add-money-btn').addEventListener('click',
 
         //total amount:
         const totalAmount = bankAmount + existingAmount;
-        // console.log(totalAmount);
-
         //update the existing value:
         document.getElementById("existing-amount").innerText = totalAmount;
+
+        //clear inputs after successful transaction
+        document.getElementById('bank-name').value = '';
+        document.getElementById('bank-account-number').value = '';
+        document.getElementById('amount').value = '';
+        document.getElementById('pin-number').value = '';
 
     }
 )
@@ -59,6 +63,11 @@ document.getElementById('withdraw-money-btn').addEventListener('click',
         //existingValue
         const existingValue = currentAmount - withdrawAmount;
         document.getElementById('existing-amount').innerText = existingValue;
+
+        //clear inputs after successful transactions
+        document.getElementById('agent-number').value = '';
+        document.getElementById('withdraw-amount').value = '';
+        document.getElementById('withdraw-pin-number').value = '';
 
     }
 )
