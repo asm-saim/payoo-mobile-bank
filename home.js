@@ -1,5 +1,6 @@
 
 const validPin = 4321;
+const transactionData = [];
 
 //function to get input value:
 function getInputValue(id) {
@@ -78,6 +79,16 @@ document.getElementById('add-money-btn').addEventListener('click',
         //update the existing value:
         setInnerText(totalAmount); //using function
 
+
+        // Transaction History:
+        const trHistory = {
+            name: 'Add Money',
+            date: new Date().toLocaleTimeString()
+        }
+        transactionData.push(trHistory);
+        console.log(transactionData);
+
+
         //clear inputs after successful transaction
         document.getElementById('bank-name').value = '';
         document.getElementById('bank-account-number').value = '';
@@ -112,6 +123,14 @@ document.getElementById('withdraw-money-btn').addEventListener('click',
         //existingValue
         const existingValue = currentAmount - withdrawAmount;
         setInnerText(existingValue); //using function
+
+        // Transaction History:
+        const trHistory = {
+            name: 'Cash Out',
+            date: new Date().toLocaleTimeString()
+        }
+        transactionData.push(trHistory);
+        console.log(transactionData);
 
 
         //clear inputs after successful transactions
@@ -150,6 +169,14 @@ document.getElementById('transfer-money-btn').addEventListener('click',
         //existingValue
         const existingBalance = currentBalance - transferAmount;
         setInnerText(existingBalance); //using function
+
+        // Transaction History:
+        const trHistory = {
+            name: 'Transfer Money',
+            date: new Date().toLocaleTimeString()
+        }
+        transactionData.push(trHistory);
+        console.log(transactionData);
 
 
         //clear inputs after successful transactions
@@ -195,6 +222,14 @@ document.getElementById('pay-now-btn').addEventListener('click',
         //update the existing value:
         setInnerText(totalCurrency); //using function
 
+        // Transaction History:
+        const trHistory = {
+            name: 'Pay Bill',
+            date: new Date().toLocaleTimeString()
+        }
+        transactionData.push(trHistory);
+        console.log(transactionData);
+
         //clear inputs after successful transaction
         document.getElementById('pay-bank-name').value = '';
         document.getElementById('biller-account-number').value = '';
@@ -203,6 +238,9 @@ document.getElementById('pay-now-btn').addEventListener('click',
 
     }
 )
+
+
+//transactions Feature:
 
 
 // Toggling Feature:
