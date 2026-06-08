@@ -217,3 +217,13 @@ document.getElementById('pay-bill-cart').addEventListener('click',
 
     }
 )
+//transactions-part
+document.getElementById('transactions-cart').addEventListener('click',
+    function () {
+        toggleFeature('transactions-part');
+
+        //cart-bg-effect
+        toggleWithColor('transactions-cart');
+
+    }
+)
