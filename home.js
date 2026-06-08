@@ -57,8 +57,12 @@ document.getElementById('add-money-btn').addEventListener('click',
         const bankName = document.getElementById('bank-name').value;
         const bankAccountNumber = document.getElementById('bank-account-number').value;
         const bankAmount = getInputValue('amount'); //using function
+        //validation
+        if (bankAmount <= 0) {
+            alert("Invalid Amount");
+            return;
+        }
         const bankPinNumber = getInputValue('pin-number'); //using function
-        // console.log(bankName,bankAccountNumber,bankAmount,bankPinNumber);
 
         //Get the existing amount
         const existingAmount = getInnerTex('existing-amount');
@@ -111,6 +115,12 @@ document.getElementById('withdraw-money-btn').addEventListener('click',
         const currentAmount = getInnerTex('existing-amount');
 
         // validation
+        if (withdrawAmount <= 0 || withdrawAmount > currentAmount) {
+            alert("Invalid Amount")
+            return;
+
+        }
+
         if (agentNumber.length !== 11 && agentNumber.length !== 13) {
             alert("Please provide a valid agent number");
             return;
