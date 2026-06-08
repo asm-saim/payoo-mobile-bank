@@ -86,7 +86,7 @@ document.getElementById('add-money-btn').addEventListener('click',
             date: new Date().toLocaleTimeString()
         }
         transactionData.push(trHistory);
-        console.log(transactionData);
+
 
 
         //clear inputs after successful transaction
@@ -176,7 +176,7 @@ document.getElementById('transfer-money-btn').addEventListener('click',
             date: new Date().toLocaleTimeString()
         }
         transactionData.push(trHistory);
-        console.log(transactionData);
+
 
 
         //clear inputs after successful transactions
@@ -228,7 +228,7 @@ document.getElementById('pay-now-btn').addEventListener('click',
             date: new Date().toLocaleTimeString()
         }
         transactionData.push(trHistory);
-        console.log(transactionData);
+
 
         //clear inputs after successful transaction
         document.getElementById('pay-bank-name').value = '';
@@ -241,7 +241,33 @@ document.getElementById('pay-now-btn').addEventListener('click',
 
 
 //transactions Feature:
+document.getElementById('transactions-cart').addEventListener('click',
+    function () {
+        const accessTrContainer = document.getElementById('transaction-container');
+        accessTrContainer.innerHTML = '';
 
+
+        for (let data of transactionData) {
+            const div = document.createElement("div");
+            div.innerHTML = `                <form class="bg-white my-5 p-3 rounded-2xl">
+                    <div class="flex justify-between items-center">
+                        <div class="flex justify-start items-center gap-3">
+                            <img class="bg-[#F4F5F7] p-3 rounded-full bg" src="./assets/wallet1.png" alt="">
+                            <div>
+                                <h1 class="font-bold py-1 text-gray-600">${data.name}</h1>
+                                <p class="font-normal text-sm text-gray-600">${data.date}</p>
+                            </div>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+
+                </form>`
+            accessTrContainer.appendChild(div);
+        }
+    }
+)
 
 // Toggling Feature:
 
