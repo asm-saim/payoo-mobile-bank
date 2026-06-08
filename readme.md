@@ -29,6 +29,15 @@ Key capabilities include adding money, cashouts, bonus rewards, and a comprehens
 - **PIN Security System** — Every transaction requires PIN authentication for enhanced security
 - **Responsive Design** — Optimised for all screen sizes using DaisyUI component system
 
+## Key Highlights 
+
+- Implemented a **multi-screen SPA architecture** in Vanilla JS with dynamic view rendering — no frameworks
+- Designed a **PIN authentication layer** applied uniformly across all transaction types
+- Built a **transaction ledger system** that persists state across user sessions
+- Achieved a **fully responsive UI** using DaisyUI's component system with custom Tailwind overrides
+- Delivered a complete financial product UI with **8 distinct screens** and consistent UX patterns
+
+
 ## UI Screenshots
 
 <table>
@@ -51,10 +60,3 @@ Key capabilities include adding money, cashouts, bonus rewards, and a comprehens
 </table>
 
 
-## Key Highlights 
-
-- Implemented a **multi-screen SPA architecture** in Vanilla JS with dynamic view rendering — no frameworks
-- Designed a **PIN authentication layer** applied uniformly across all transaction types
-- Built a **transaction ledger system** that persists state across user sessions
-- Achieved a **fully responsive UI** using DaisyUI's component system with custom Tailwind overrides
-- Delivered a complete financial product UI with **8 distinct screens** and consistent UX patterns
