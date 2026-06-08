@@ -162,6 +162,9 @@ document.getElementById('transfer-money-btn').addEventListener('click',
 )
 
 
+//Get Bonus feature:
+
+
 // Toggling Feature:
 
 //add-money-part
@@ -177,18 +180,40 @@ document.getElementById('add-money-cart').addEventListener('click',
 document.getElementById('cash-out-cart').addEventListener('click',
     function () {
         toggleFeature('cash-out-part');
-        
+
         //cart-bg-effect
         toggleWithColor('cash-out-cart');
     }
 )
-//cash-out-part
+//transfer-money-part
 document.getElementById('transfer-money-cart').addEventListener('click',
     function () {
         toggleFeature('transfer-money-part');
-        
+
         //cart-bg-effect
         toggleWithColor('transfer-money-cart');
+
+    }
+)
+
+//get-bonus-part
+document.getElementById('get-bonus-cart').addEventListener('click',
+    function () {
+        toggleFeature('get-bonus-part');
+
+        //cart-bg-effect
+        toggleWithColor('get-bonus-cart');
+
+    }
+)
+
+//pay-bill-part
+document.getElementById('pay-bill-cart').addEventListener('click',
+    function () {
+        toggleFeature('pay-bill-part');
+
+        //cart-bg-effect
+        toggleWithColor('pay-bill-cart');
 
     }
 )
