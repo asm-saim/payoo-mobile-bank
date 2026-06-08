@@ -165,6 +165,46 @@ document.getElementById('transfer-money-btn').addEventListener('click',
 //Get Bonus feature:
 
 
+
+//pay bill feature:
+document.getElementById('pay-now-btn').addEventListener('click',
+    function (e) {
+        e.preventDefault();
+        const payBankName = document.getElementById('pay-bank-name').value;
+        const billerAccountNumber = document.getElementById('biller-account-number').value;
+        const amountToPay = getInputValue('amount-to-pay'); //using function
+        const billerPinNumber = getInputValue('biller-pin-number'); //using function
+        // console.log(bankName,bankAccountNumber,bankAmount,bankPinNumber);
+
+        //Get the existing amount
+        const existingCurrency = getInnerTex('existing-amount');
+        // console.log(existingAmount);
+
+        //validation:
+        if (billerAccountNumber.length !== 11 && billerAccountNumber.length !== 13) {
+            alert("Please provide a valid account number");
+            return;
+        }
+        if (billerPinNumber !== validPin) {
+            alert("Please enter a valid pin number");
+            return;
+        }
+
+        //total amount:
+        const totalCurrency = existingCurrency - amountToPay;
+        //update the existing value:
+        setInnerText(totalCurrency); //using function
+
+        //clear inputs after successful transaction
+        document.getElementById('pay-bank-name').value = '';
+        document.getElementById('biller-account-number').value = '';
+        document.getElementById('amount-to-pay').value = '';
+        document.getElementById('biller-pin-number').value = '';
+
+    }
+)
+
+
 // Toggling Feature:
 
 //add-money-part
